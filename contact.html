@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact — TEJOMARG Infraprojects</title>
+<meta name="description" content="Contact Tejomarg Infraprojects — send an enquiry about a package or tender. Email info@tejomarg.in or enquiries@tejomarg.in, or call +91 95997 13355.">
+<link rel="icon" href="logo/favicon.ico" sizes="any">
+<link rel="icon" type="image/svg+xml" href="logo/favicon.svg">
+<link rel="apple-touch-icon" href="logo/apple-touch-icon-180.png">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- NAV -->
+<header class="nav" id="nav">
+  <div class="wrap nav-inner">
+    <a href="index.html" class="brand">
+      <svg class="logo-mark" viewBox="0 0 100 100" fill="none" stroke="var(--green)" stroke-linecap="square" aria-hidden="true">
+        <path d="M44 31 L34 91 M56 31 L66 91" stroke-width="7"/><line x1="12" y1="27" x2="88" y2="27" stroke-width="6"/>
+        <path d="M44 36 L61 54 L39 70 L66 90" stroke-width="3"/><path d="M56 36 L39 54 L61 70 L34 90" stroke-width="3"/>
+        <circle cx="12" cy="27" r="4.5" fill="var(--green)" stroke="none"/><circle cx="88" cy="27" r="4.5" fill="var(--green)" stroke="none"/><circle cx="50" cy="27" r="5" fill="var(--green)" stroke="none"/></svg>
+      <span>TEJOMARG<small>EPC Infraprojects</small></span>
+    </a>
+    <nav class="nav-links" id="navlinks">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="capabilities.html">Capabilities</a>
+      <a href="approach.html">Approach</a>
+      <a href="contact.html" class="nav-cta active">Enquire →</a>
+    </nav>
+    <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<!-- PAGE HERO -->
+<section class="phero" style="min-height:44vh;padding:150px 0 44px">
+  <div class="phero-bg" style="background-image:url('https://images.pexels.com/photos/29063598/pexels-photo-29063598.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1920')"></div>
+  <div class="wrap">
+    <span class="crumb"><a href="index.html">Home</a> / Contact</span>
+    <h1>Get in touch.</h1>
+    <p>Have a package or tender? Fill in the form and we&#8217;ll respond with a capability statement and a point of contact.</p>
+  </div>
+</section>
+
+<!-- CONTACT + FORM -->
+<section class="pad">
+  <div class="wrap contact-grid">
+    <div class="contact-intro">
+      <span class="eyebrow">Contact details</span>
+      <h2>We&#8217;d like to hear from you.</h2>
+      <p>Reach us by email or phone, or send the enquiry form and it will arrive straight in our inbox.</p>
+      <ul class="contact-list">
+        <li><span class="k">Enquiries &amp; tenders</span><a href="mailto:enquiries@tejomarg.in">enquiries@tejomarg.in</a></li>
+        <li><span class="k">General &amp; contact</span><a href="mailto:info@tejomarg.in">info@tejomarg.in</a></li>
+        <li><span class="k">Contact person</span><a href="tel:+919599713355">Hemant Sharma · +91 95997 13355</a></li>
+      </ul>
+    </div>
+    <form class="enquiry-card" id="enquiryForm" action="https://formsubmit.co/info@tejomarg.in" method="POST">
+      <h3>Send an enquiry</h3>
+      <div class="sub">Fields marked * are required.</div>
+      <input type="hidden" name="_subject" value="New enquiry from tejomarg.in">
+      <input type="hidden" name="_template" value="table">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_next" value="https://tejomarg.in/contact.html?sent=1">
+      <input type="text" name="_honey" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <div class="field-row">
+        <div class="field"><label for="f-name">Name *</label><input id="f-name" type="text" name="Name" required></div>
+        <div class="field"><label for="f-company">Company</label><input id="f-company" type="text" name="Company"></div>
+      </div>
+      <div class="field-row">
+        <div class="field"><label for="f-email">Email *</label><input id="f-email" type="email" name="Email" required></div>
+        <div class="field"><label for="f-phone">Phone</label><input id="f-phone" type="tel" name="Phone"></div>
+      </div>
+      <div class="field"><label for="f-disc">Discipline</label>
+        <select id="f-disc" name="Discipline">
+          <option>Railway track &amp; civil</option>
+          <option>Signalling &amp; telecom</option>
+          <option>Railway electrification (OHE)</option>
+          <option>Transmission lines</option>
+          <option>Substations (AIS / GIS)</option>
+          <option>HT cabling / underground</option>
+          <option>Other / multiple</option>
+        </select>
+      </div>
+      <div class="field"><label for="f-msg">Scope / message *</label><textarea id="f-msg" name="Message" required placeholder="Tell us about the package, tender or scope…"></textarea></div>
+      <button type="submit" class="btn btn-primary">Send enquiry →</button>
+      <div class="form-status" id="formStatus" role="status" aria-live="polite"></div>
+    </form>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a href="index.html" class="brand">
+          <svg class="logo-mark" viewBox="0 0 100 100" fill="none" stroke="var(--green)" stroke-linecap="square" aria-hidden="true">
+            <path d="M44 31 L34 91 M56 31 L66 91" stroke-width="7"/><line x1="12" y1="27" x2="88" y2="27" stroke-width="6"/>
+            <path d="M44 36 L61 54 L39 70 L66 90" stroke-width="3"/><path d="M56 36 L39 54 L61 70 L34 90" stroke-width="3"/>
+            <circle cx="12" cy="27" r="4.5" fill="var(--green)" stroke="none"/><circle cx="88" cy="27" r="4.5" fill="var(--green)" stroke="none"/><circle cx="50" cy="27" r="5" fill="var(--green)" stroke="none"/></svg>
+          <span>TEJOMARG<small>EPC Infraprojects</small></span></a>
+        <p>A newly established turnkey EPC company for railway, transmission, signalling, underground and substation works in India.</p>
+      </div>
+      <div class="foot-col"><h5>Company</h5><a href="about.html">About</a><a href="approach.html">Approach</a><a href="contact.html">Contact</a></div>
+      <div class="foot-col"><h5>Capabilities</h5><a href="capabilities.html">Railways</a><a href="capabilities.html">Transmission</a><a href="capabilities.html">Substations</a><a href="capabilities.html">Underground</a></div>
+      <div class="foot-col"><h5>Reach us</h5><a href="mailto:info@tejomarg.in">info@tejomarg.in</a><a href="mailto:enquiries@tejomarg.in">enquiries@tejomarg.in</a><a href="tel:+919599713355">+91 95997 13355</a></div>
+    </div>
+    <div class="foot-bar"><span>© <span id="yr"></span> TEJOMARG INFRAPROJECTS PVT. LTD.</span><span>tejomarg.in</span></div>
+  </div>
+</footer>
+<script src="app.js"></script>
+</body>
+</html>
