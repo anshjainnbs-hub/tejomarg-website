@@ -170,6 +170,32 @@
   .cta-contact{margin-top:30px;display:flex;flex-wrap:wrap;justify-content:center;gap:10px 30px;
     font-family:"IBM Plex Mono";font-size:14px;color:rgba(235,246,239,.9)}
   .cta-contact a{color:#7CE0B0;font-weight:500}.cta-contact a:hover{color:#fff}
+  /* CONTACT + ENQUIRY FORM */
+  .contact-grid{position:relative;display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:start}
+  .contact-intro h2{font-size:clamp(28px,4vw,44px);font-weight:800;color:#fff;margin-top:16px}
+  .contact-intro p{color:rgba(235,246,239,.92);font-size:16.5px;margin:16px 0 26px;max-width:440px}
+  .contact-list{list-style:none;display:flex;flex-direction:column;gap:16px}
+  .contact-list li{display:flex;flex-direction:column;gap:3px}
+  .contact-list .k{font-family:"IBM Plex Mono";font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#7CE0B0}
+  .contact-list a{font-family:"IBM Plex Mono";font-size:15px;color:#fff;font-weight:500}
+  .contact-list a:hover{color:#7CE0B0}
+  .enquiry-card{background:var(--paper);border-radius:16px;padding:30px 28px;box-shadow:0 30px 60px -30px rgba(8,40,26,.65)}
+  .enquiry-card h3{font-size:21px;font-weight:800;margin-bottom:4px}
+  .enquiry-card .sub{color:var(--muted);font-size:13.5px;margin-bottom:20px}
+  .field{margin-bottom:14px}
+  .field label{display:block;font-family:"IBM Plex Mono";font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin-bottom:6px}
+  .field input,.field select,.field textarea{width:100%;font-family:inherit;font-size:15px;color:var(--text);
+    background:var(--paper-2);border:1px solid var(--line);border-radius:9px;padding:11px 13px;transition:border .2s,box-shadow .2s}
+  .field textarea{resize:vertical;min-height:104px}
+  .field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--green);box-shadow:0 0 0 3px var(--green-soft)}
+  .field-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  .enquiry-card .btn-primary{width:100%;justify-content:center;margin-top:6px}
+  .form-status{margin-top:14px;font-size:14px;font-family:"IBM Plex Mono";line-height:1.5;display:none}
+  .form-status.ok{display:block;color:var(--green-deep)}
+  .form-status.err{display:block;color:#b3261e}
+  .form-status a{text-decoration:underline}
+  .hp{position:absolute!important;left:-9999px;width:1px;height:1px;overflow:hidden}
+  @media(max-width:900px){.contact-grid{grid-template-columns:1fr;gap:34px}.field-row{grid-template-columns:1fr}}
 
   /* FOOTER */
   footer{background:var(--ink);color:#9fb3a8;padding:64px 0 30px}
@@ -352,14 +378,48 @@
 <!-- CTA -->
 <section class="cta" id="contact">
   <div class="cta-bg" style="background-image:url('https://images.pexels.com/photos/29063598/pexels-photo-29063598.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1920')"></div>
-  <div class="wrap cta-inner reveal">
-    <h2>Have a package or tender for us?</h2>
-    <p>Share the scope and we&#8217;ll respond with a capability statement and a point of contact.</p>
-    <a href="mailto:enquiries@tejomarg.in" class="btn btn-primary">enquiries@tejomarg.in →</a>
-    <div class="cta-contact">
-      <span>General &amp; contact: <a href="mailto:info@tejomarg.in">info@tejomarg.in</a></span>
-      <span>Hemant Sharma · <a href="tel:+919599713355">+91 95997 13355</a></span>
+  <div class="wrap contact-grid reveal">
+    <div class="contact-intro">
+      <span class="eyebrow on-dark">Get in touch</span>
+      <h2>Have a package or tender for us?</h2>
+      <p>Fill in the form and we&#8217;ll respond with a capability statement and a point of contact. Or reach us directly:</p>
+      <ul class="contact-list">
+        <li><span class="k">Enquiries &amp; tenders</span><a href="mailto:enquiries@tejomarg.in">enquiries@tejomarg.in</a></li>
+        <li><span class="k">General &amp; contact</span><a href="mailto:info@tejomarg.in">info@tejomarg.in</a></li>
+        <li><span class="k">Hemant Sharma</span><a href="tel:+919599713355">+91 95997 13355</a></li>
+      </ul>
     </div>
+    <form class="enquiry-card" id="enquiryForm" action="https://formsubmit.co/info@tejomarg.in" method="POST">
+      <h3>Send an enquiry</h3>
+      <div class="sub">Fields marked * are required.</div>
+      <input type="hidden" name="_subject" value="New enquiry from tejomarg.in">
+      <input type="hidden" name="_template" value="table">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_next" value="https://tejomarg.in/?sent=1">
+      <input type="text" name="_honey" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <div class="field-row">
+        <div class="field"><label for="f-name">Name *</label><input id="f-name" type="text" name="Name" required></div>
+        <div class="field"><label for="f-company">Company</label><input id="f-company" type="text" name="Company"></div>
+      </div>
+      <div class="field-row">
+        <div class="field"><label for="f-email">Email *</label><input id="f-email" type="email" name="Email" required></div>
+        <div class="field"><label for="f-phone">Phone</label><input id="f-phone" type="tel" name="Phone"></div>
+      </div>
+      <div class="field"><label for="f-disc">Discipline</label>
+        <select id="f-disc" name="Discipline">
+          <option>Railway track &amp; civil</option>
+          <option>Signalling &amp; telecom</option>
+          <option>Railway electrification (OHE)</option>
+          <option>Transmission lines</option>
+          <option>Substations (AIS / GIS)</option>
+          <option>HT cabling / underground</option>
+          <option>Other / multiple</option>
+        </select>
+      </div>
+      <div class="field"><label for="f-msg">Scope / message *</label><textarea id="f-msg" name="Message" required placeholder="Tell us about the package, tender or scope…"></textarea></div>
+      <button type="submit" class="btn btn-primary">Send enquiry →</button>
+      <div class="form-status" id="formStatus" role="status" aria-live="polite"></div>
+    </form>
   </div>
 </section>
 
@@ -393,6 +453,38 @@
   const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}}),{threshold:.12});
   document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
   document.getElementById('yr').textContent=new Date().getFullYear();
+
+  // Enquiry form → emails to info@tejomarg.in via FormSubmit (AJAX for inline feedback)
+  const ef=document.getElementById('enquiryForm');
+  if(ef){
+    ef.addEventListener('submit',async e=>{
+      e.preventDefault();
+      const st=document.getElementById('formStatus');
+      const btn=ef.querySelector('button[type=submit]');
+      const orig=btn.textContent;
+      st.className='form-status'; st.textContent='';
+      btn.disabled=true; btn.textContent='Sending…';
+      try{
+        const res=await fetch('https://formsubmit.co/ajax/info@tejomarg.in',{
+          method:'POST',headers:{'Accept':'application/json'},body:new FormData(ef)});
+        const data=await res.json().catch(()=>({}));
+        if(res.ok){
+          st.className='form-status ok';
+          st.textContent='Thank you — your enquiry has been sent. We’ll be in touch shortly.';
+          ef.reset();
+        } else { throw new Error(data.message||'failed'); }
+      }catch(err){
+        st.className='form-status err';
+        st.innerHTML='Sorry, something went wrong. Please email <a href="mailto:info@tejomarg.in">info@tejomarg.in</a> directly.';
+      }finally{ btn.disabled=false; btn.textContent=orig; }
+    });
+  }
+
+  // If FormSubmit redirected back after a non-JS submit
+  if(new URLSearchParams(location.search).get('sent')==='1'){
+    const st=document.getElementById('formStatus');
+    if(st){ st.className='form-status ok'; st.textContent='Thank you — your enquiry has been sent. We’ll be in touch shortly.'; }
+  }
 </script>
 </body>
 </html>
